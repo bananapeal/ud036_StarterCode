@@ -1,7 +1,9 @@
+"""module that runs everything!!"""
+
 import fresh_tomatoes
 import media
 
-"""module that runs everything!!"""
+
 
 #here is my function that populates movies object with hardcoded movie details
 movies = media.MyMovies()
