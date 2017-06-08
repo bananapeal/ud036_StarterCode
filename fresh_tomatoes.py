@@ -1,7 +1,11 @@
 import webbrowser
 import os
 import re
+import media
 
+print("loaded fresh")
+movies = media.MyMovies()
+print("success return movies")
 
 # Styles and scripting for the page
 main_page_head = '''
@@ -134,6 +138,7 @@ def create_movie_tiles_content(movies):
     content = ''
     for movie in movies:
         # Extract the youtube ID from the url
+        # **I Prefer camel-casing instead of this underscore stuff. 
         youtube_id_match = re.search(
             r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
         youtube_id_match = youtube_id_match or re.search(
@@ -165,3 +170,5 @@ def open_movies_page(movies):
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
+create_movie_tiles_content(movies)
+open_movies_page(movies)
