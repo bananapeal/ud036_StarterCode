@@ -1,11 +1,6 @@
 import webbrowser
 import os
 import re
-import media
-
-print("loaded fresh")
-movies = media.MyMovies()
-print("success return movies")
 
 # Styles and scripting for the page
 main_page_head = '''
@@ -170,5 +165,3 @@ def open_movies_page(movies):
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
-create_movie_tiles_content(movies)
-open_movies_page(movies)
